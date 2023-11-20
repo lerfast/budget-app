@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: luis
+  password: luis123
+  host: localhost
+
+development:
+  <<: *default
+  database: budget_app_development
+
+test:
+  <<: *default
+  database: budget_app_test
+
+production:
+  <<: *default
+  database: budget_app_production
+  password: <%= ENV['BUDGET_APP_DATABASE_PASSWORD'] %>
