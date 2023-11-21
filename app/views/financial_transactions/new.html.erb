@@ -1,0 +1,12 @@
+<%= form_with model: @transaction, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :amount %>
+  <%= form.number_field :amount %>
+
+  <%= form.label :group_id, 'Category' %>
+  <%= form.collection_select :group_id, current_user.groups, :id, :name %>
+
+  <%= form.submit "Save" %>
+<% end %>

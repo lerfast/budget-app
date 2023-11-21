@@ -1,0 +1,12 @@
+<% if @groups.present? %>
+  <% @groups.each do |group| %>
+    <%= group.name %>
+    <%= group.icon %>
+    <%= link_to 'Details', group_path(group) %>
+    <%= link_to 'Edit', edit_group_path(group) %>
+    <%= button_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, form: { "data-turbo" => "false" } %>
+  <% end %>
+<% else %>
+  <p>No groups available.</p>
+<% end %>
+<%= link_to 'Add a new category', new_group_path %>
