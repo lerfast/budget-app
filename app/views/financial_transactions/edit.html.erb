@@ -1,0 +1,11 @@
+<%= form_with(model: @transaction, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :amount %>
+  <%= form.number_field :amount %>
+
+  <%= form.hidden_field :group_id %>
+
+  <%= form.submit "Update Transaction" %>
+<% end %>

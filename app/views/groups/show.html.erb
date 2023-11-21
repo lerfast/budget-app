@@ -3,6 +3,15 @@
 <h1><%= @group.name %></h1>
 <p>Icon: <%= @group.icon %></p>
 
+<h2>Transactions</h2>
+<% @transactions.each do |transaction| %>
+  <p><%= transaction.name %> - <%= transaction.amount %></p>
+<% end %>
+<% @transactions.each do |transaction| %>
+  <p><%= transaction.name %> - <%= transaction.amount %></p>
+  <%= link_to 'Edit', edit_financial_transaction_path(transaction) %>
+  <%= link_to 'Delete', financial_transaction_path(transaction), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 
-
+<%= link_to 'Add new Transaction', new_financial_transaction_path(group_id: @group.id) %>
 <%= link_to 'Back to Categories', groups_path %>

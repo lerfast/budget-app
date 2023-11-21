@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users
 
   resources :groups
 
-  resources :financial_transactions, only: [:new, :create]
+  resources :financial_transactions
+  
 
-  root "groups#index"
+  root 'home#index'
 
   get "up" => "rails/health#show", as: :rails_health_check
 end
