@@ -1,10 +1,11 @@
 <% if @groups.present? %>
   <% @groups.each do |group| %>
-    <%= group.name %>
-    <%= group.icon %>
-    <%= link_to 'Details', group_path(group) %>
-    <%= link_to 'Edit', edit_group_path(group) %>
-    <%= button_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, form: { "data-turbo" => "false" } %>
+    <%= link_to group_path(group) do %>
+      <div class='category'>
+        <%= image_tag(group.icon, alt: group.name, width: 80, height: 80, class: "group-icon") %>
+        <%= group.name %>
+      </div>
+    <% end %>
   <% end %>
 <% else %>
   <p>No groups available.</p>

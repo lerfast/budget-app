@@ -24,9 +24,9 @@ class FinancialTransactionsController < ApplicationController
   end
 
   def destroy
-    group = @transaction.group
+    @transaction = FinancialTransaction.find(params[:id])
     @transaction.destroy
-    redirect_to group_path(group), notice: 'Transaction was successfully destroyed.'
+    redirect_to groups_path, notice: 'Transaction was successfully destroyed.'      
   end
 
   private

@@ -1,17 +1,20 @@
+<div class='category'>
+  <%= image_tag(@group.icon, alt: @group.name, width: 80, height: 80, class: "group-icon") %>
+  <h1><%= @group.name %></h1>
+</div>
 
-
-<h1><%= @group.name %></h1>
-<p>Icon: <%= @group.icon %></p>
 
 <h2>Transactions</h2>
 <% @transactions.each do |transaction| %>
-  <p><%= transaction.name %> - <%= transaction.amount %></p>
-<% end %>
-<% @transactions.each do |transaction| %>
-  <p><%= transaction.name %> - <%= transaction.amount %></p>
-  <%= link_to 'Edit', edit_financial_transaction_path(transaction) %>
-  <%= link_to 'Delete', financial_transaction_path(transaction), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class='transaction-line'>
+    <span class="transaction-name"><%= transaction.created_at %></span>
+    <span class="transaction-name"><%= transaction.name %></span>
+    <span class="transaction-amount"><%= number_to_currency(transaction.amount) %></span>
+    <%= button_to "Delete", financial_transaction_path(transaction), method: :delete, class: "transaction-delete" %>
+  </div>
 <% end %>
 
-<%= link_to 'Add new Transaction', new_financial_transaction_path(group_id: @group.id) %>
-<%= link_to 'Back to Categories', groups_path %>
+<div class="buttons-bar">
+  <%= link_to 'Add new Transaction', new_financial_transaction_path(group_id: @group.id) %>
+  <%= link_to 'Back to Categories', groups_path %>
+</div>

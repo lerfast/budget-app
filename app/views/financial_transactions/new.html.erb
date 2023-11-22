@@ -9,15 +9,28 @@
   </div>
 <% end %>
 
-<%= form_with(model: @transaction, local: true, data: { turbo: false }) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<%# add the name of the group to the form received from the controller %>
+<div class='category'>
+  <%= image_tag(@transaction.group.icon, alt: @transaction.group.name, width: 80, height: 80, class: "group-icon") %>
+  <h2><%= @transaction.group.name %></h2>
+</div>
+<h2 class="title">Add a transaction</p>
 
-  <%= form.label :amount %>
-  <%= form.number_field :amount %>
 
-  <%= form.hidden_field :group_id %>
+<%= form_with(model: @transaction, local: true, data: { turbo: false }, class: 'form-data') do |form| %>
+  <div class='form-input-fields'>
+    <div class='input-fields'>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class='input-fields'>
+      <%= form.label :amount %>
+      <%= form.number_field :amount %>
+    </div>
 
+    <%= form.hidden_field :group_id %>
+
+  </div>
   <%= form.submit "Save Transaction" %>
 <% end %>
 
