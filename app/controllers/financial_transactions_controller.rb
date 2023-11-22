@@ -12,8 +12,8 @@ class FinancialTransactionsController < ApplicationController
       render :new
     end
   end
-  def edit
-  end
+
+  def edit; end
 
   def update
     if @transaction.update(transaction_params)

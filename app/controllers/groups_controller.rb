@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
 
   def index
@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
   end
-  
+
   def create
     @group = current_user.groups.build(group_params)
     if @group.save
@@ -25,8 +25,7 @@ class GroupsController < ApplicationController
     @transactions = @group.financial_transactions.order(created_at: :desc)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @group.update(group_params)
@@ -50,7 +49,6 @@ class GroupsController < ApplicationController
   def handle_not_found
     redirect_to groups_path, alert: 'Group not found or not accessible'
   end
-
 
   def group_params
     params.require(:group).permit(:name, :icon)
