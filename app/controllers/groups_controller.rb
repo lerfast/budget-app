@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
 
   def index
-    @groups = current_user.groups
+    @groups = current_user.groups.includes(:financial_transactions)
   end
 
   def new
