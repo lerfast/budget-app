@@ -1,0 +1,26 @@
+<!-- app/views/financial_transactions/index.html.erb -->
+
+<h1>Your Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mount</th>
+      <th>Date</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.name %></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.created_at.strftime("%d/%m/%Y") %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Transaction', new_financial_transaction_path %>

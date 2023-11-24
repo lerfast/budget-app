@@ -1,82 +1,55 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Base styles for the welcome page */
 
-.category {
-  background-color: #f7f7f7;
-  border: 1px solid #e6e6e6;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
+/* Template colors */
+:root {
+  --color-primary: #3778cc; /* Main blue */
+  --color-secondary: #5fb523; /* Secondary green */
+  --color-text: #434b54; /* Dark gray for text */
+  --color-background: #ffffff; /* White for backgrounds */
+  --color-text-light: #f4f4f4; /* White for text on dark backgrounds */
 }
 
-.form-data {
+body, html {
+  height: 100%; /* Ensure that the body takes full height */
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--color-primary); /* Blue background for the entire page */
+  color: var(--color-text-light);
+  text-align: center; /* Center text horizontally */
+}
+
+/* Ensure content is vertically centered */
+.flex-center {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  height: 100%;
 }
 
-.form-input-fields {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
+/* Specific style for the title on the welcome page */
+.splash-title {
+  font-size: 2em; /* Title size */
+  font-weight: bold; /* Bold font */
+  color: var(--color-text-light); /* White text */
 }
 
-.buttons-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-  background-color: #f7f7f7;
-  gap: 1rem;
+/* Additional, if you have a button or link for signing in or signing up, you can use this: */
+.splash-button {
+  background-color: var(--color-secondary); /* Green background for buttons */
+  color: var(--color-background); /* White text */
+  border: none;
+  padding: 15px 30px;
+  margin-top: 20px; /* Space above the button */
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none; /* Remove underline from links */
+  display: inline-block; /* Allows padding and margin to be applied */
 }
 
-.transaction-line {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-  background-color: #f7f7f7;
-  gap: 4px;
-  padding: 5px;
+/* Ensure that styles apply only on mobile devices if needed */
+@media (max-width: 768px) {
+  /* Mobile styles here */
 }
 
-.custom-select {
-  position: relative;
-  display: inline-block;
-}
-
-.select-item {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.select-item:hover {
-  background-color: #f1f1f1;
-}
-
-.icon-optio.selected {
-  border: 2px solid blue;
-}

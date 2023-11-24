@@ -1,0 +1,31 @@
+<!-- app/views/layouts/_header.html.erb -->
+
+<header>
+  <!-- Condiciones para mostrar el icono de hamburguesa y búsqueda -->
+  <% if controller_name == 'dashboard' || controller_name == 'groups' && action_name == 'show' || controller_name == 'financial_transactions' && action_name == 'show' %>
+    <nav>
+      <%= link_to '#' do %>
+        <%= image_tag('menu-icon.svg', alt: 'Menu') %>
+      <% end %>
+      <%= link_to '#' do %>
+        <%= image_tag('search-icon.svg', alt: 'Search') %>
+      <% end %>
+    </nav>
+  <% end %>
+  
+  <!-- Condiciones para mostrar el icono de flecha hacia atrás -->
+  <% if (controller_name == 'groups' && ['new', 'edit'].include?(action_name)) || (controller_name == 'financial_transactions' && ['new', 'edit'].include?(action_name)) %>
+    <nav>
+      <%= link_to 'javascript:void(0);', onclick: 'history.back();' do %>
+        <%= image_tag('back-icon.svg', alt: 'Back', class: 'back-icon') %>
+      <% end %>
+    </nav>
+  <% end %>
+
+  <!-- Otros enlaces aquí... -->
+  <%= link_to 'Dashboard', dashboard_path %>
+  <%= link_to 'Categories', groups_path %>
+  <%= link_to 'Transactions', financial_transactions_path %>
+  <%= link_to 'Account', edit_user_registration_path %>
+  <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
+</header>

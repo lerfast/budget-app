@@ -9,13 +9,15 @@
   </div>
 <% end %>
 
-<%# add the name of the group to the form received from the controller %>
-<div class='category'>
-  <%= image_tag(@transaction.group.icon, alt: @transaction.group.name, width: 80, height: 80, class: "group-icon") %>
-  <h2><%= @transaction.group.name %></h2>
-</div>
-<h2 class="title">Add a transaction</p>
-
+<% if @transaction.group.present? %>
+  <div class='category'>
+    <%= image_tag(@transaction.group.icon, alt: @transaction.group.name, width: 80, height: 80, class: "group-icon") %>
+    <h2><%= @transaction.group.name %></h2>
+  </div>
+  <h2 class="title">Add a transaction</h2>
+<% else %>
+  <p>Group not selected or doesn't exist.</p>
+<% end %>
 
 <%= form_with(model: @transaction, local: true, data: { turbo: false }, class: 'form-data') do |form| %>
   <div class='form-input-fields'>
@@ -34,4 +36,8 @@
   <%= form.submit "Save Transaction" %>
 <% end %>
 
-<%= link_to 'Go back', group_path(@transaction.group) %>
+<% if @transaction.group.present? %>
+  <%= link_to 'Go back', group_path(@transaction.group) %>
+<% else %>
+  <%= link_to 'Go back', groups_path %>
+<% end %>

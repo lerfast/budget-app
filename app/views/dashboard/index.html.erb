@@ -1,0 +1,21 @@
+<!-- app/views/dashboard/index.html.erb -->
+
+<h1>Dashboard</h1>
+
+<p>Welcome, <%= current_user.name %>.</p>
+
+<h2>Your categories</h2>
+<ul>
+  <% @groups.each do |group| %>
+    <li><%= group.name %></li>
+  <% end %>
+</ul>
+
+<h2>Your Recent Transactions</h2>
+<ul>
+  <% @transactions.last(5).each do |transaction| %>
+    <li><%= transaction.name %> - <%= number_to_currency (transaction.amount) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'See all transactions', financial_transactions_path %>
