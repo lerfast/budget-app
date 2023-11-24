@@ -1,6 +1,7 @@
 <div class='category'>
   <%= image_tag(@group.icon, alt: @group.name, width: 80, height: 80, class: "group-icon") %>
   <h1><%= @group.name %></h1>
+  <p>Total Spent: <%= number_to_currency(@total_amount) %></p>
 </div>
 
 

@@ -4,6 +4,9 @@
       <div class='category'>
         <%= image_tag(group.icon, alt: group.name, width: 80, height: 80, class: "group-icon") %>
         <%= group.name %>
+        <%= link_to 'Details', group_path(group) %>
+    <%= link_to 'Edit', edit_group_path(group) %>
+    <%= button_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, form: { "data-turbo" => "false" } %>
       </div>
     <% end %>
   <% end %>

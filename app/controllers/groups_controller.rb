@@ -23,6 +23,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @transactions = @group.financial_transactions.order(created_at: :desc)
+    @total_amount = @transactions.sum(:amount)
   end
 
   def edit; end

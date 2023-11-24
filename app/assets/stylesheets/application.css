@@ -60,3 +60,24 @@
     gap: 4px;
     padding: 5px; 
   }
+
+  .custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .select-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .select-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .icon-optio.selected {
+    border: 2px solid blue; 
+  }
+  

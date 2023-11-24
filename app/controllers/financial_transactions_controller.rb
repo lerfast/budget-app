@@ -1,4 +1,5 @@
 class FinancialTransactionsController < ApplicationController
+  before_action :set_transaction, only: [:edit, :update, :destroy]
   def new
     @transaction = FinancialTransaction.new(group_id: params[:group_id])
   end

@@ -1,20 +1,16 @@
-<% if @group.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
-    <ul>
-      <% @group.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 <%= form_with model: @group, local: true, data: { turbo: false } do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
 
   <%= form.label :icon %>
-  <%= form.text_field :icon %>
+  <div class="icon-select">
+  <% Group::ICONS.each do |icon| %>
+    <div class="icon-option" data-value="<%= icon %>">
+      <%= image_tag(icon, width: 30, height: 30) %>
+    </div>
+  <% end %>
+  <%= form.hidden_field :icon, id: 'selected_icon' %>
+</div>
 
   <%= form.submit "Save" %>
 <% end %>
-
