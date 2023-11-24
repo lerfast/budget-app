@@ -1,5 +1,5 @@
 class FinancialTransactionsController < ApplicationController
-  before_action :set_transaction, only: [:edit, :update, :destroy]
+  before_action :set_transaction, only: %i[edit update destroy]
   def new
     @transaction = FinancialTransaction.new(group_id: params[:group_id])
   end
@@ -27,7 +27,7 @@ class FinancialTransactionsController < ApplicationController
   def destroy
     @transaction = FinancialTransaction.find(params[:id])
     @transaction.destroy
-    redirect_to groups_path, notice: 'Transaction was successfully destroyed.'      
+    redirect_to groups_path, notice: 'Transaction was successfully destroyed.'
   end
 
   private

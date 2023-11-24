@@ -6,7 +6,7 @@ RSpec.describe FinancialTransactionsController, type: :controller do
 
   let(:valid_attributes) do
     {
-      name: "Transaction",
+      name: 'Transaction',
       amount: 100,
       group_id: group.id
     }
@@ -17,15 +17,15 @@ RSpec.describe FinancialTransactionsController, type: :controller do
     sign_in user
   end
 
-  describe "POST #create" do
-    context "with valid parameters" do
-      it "creates a new FinancialTransaction" do
-        expect {
+  describe 'POST #create' do
+    context 'with valid parameters' do
+      it 'creates a new FinancialTransaction' do
+        expect do
           post :create, params: { financial_transaction: valid_attributes }
-        }.to change(FinancialTransaction, :count).by(1)
+        end.to change(FinancialTransaction, :count).by(1)
       end
 
-      it "redirects to the group page" do
+      it 'redirects to the group page' do
         post :create, params: { financial_transaction: valid_attributes }
         expect(response).to redirect_to(group_path(group))
       end
