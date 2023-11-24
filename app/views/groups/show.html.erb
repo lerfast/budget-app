@@ -1,0 +1,21 @@
+<div class='category'>
+  <%= image_tag(@group.icon, alt: @group.name, width: 80, height: 80, class: "group-icon") %>
+  <h1><%= @group.name %></h1>
+  <p>Total Spent: <%= number_to_currency(@total_amount) %></p>
+</div>
+
+
+<h2>Transactions</h2>
+<% @transactions.each do |transaction| %>
+  <div class='transaction-line'>
+    <span class="transaction-name"><%= transaction.created_at %></span>
+    <span class="transaction-name"><%= transaction.name %></span>
+    <span class="transaction-amount"><%= number_to_currency(transaction.amount) %></span>
+    <%= button_to "Delete", financial_transaction_path(transaction), method: :delete, class: "transaction-delete" %>
+  </div>
+<% end %>
+
+<div class="buttons-bar">
+  <%= link_to 'Add new Transaction', new_financial_transaction_path(group_id: @group.id) %>
+  <%= link_to 'Back to Categories', groups_path %>
+</div>

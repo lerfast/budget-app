@@ -1,0 +1,15 @@
+/* app/assets/stylesheets/icons.css */
+
+.icon-option {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.icon-option:hover {
+  transform: scale(1.1);
+}
+
+.icon-option.selected {
+  border: 2px solid #007bff;
+  border-radius: 4px;
+}
