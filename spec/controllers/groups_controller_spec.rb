@@ -53,7 +53,6 @@ RSpec.describe GroupsController, type: :controller do
     end
   end
 
-
   describe 'PUT #update' do
     context 'with valid params' do
       let(:new_attributes) { { name: 'Updated Group' } }

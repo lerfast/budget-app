@@ -11,7 +11,6 @@ RSpec.feature 'Groups', type: :feature do
   scenario 'User creates a new group' do
     visit new_group_path
 
-
     fill_in 'Name', with: 'New Group'
   end
 end
