@@ -1,16 +1,16 @@
-/* Base styles for the welcome page */
+
 @import url('https://fonts.googleapis.com/css?family=Proxima+Nova:400,700');
-/* Template colors */
+
 :root {
-  /*--color-primary: #3778cc; /* Main blue */
-  --color-secondary: #5fb523; /* Secondary green */
-  --color-text: #434b54; /* Dark gray for text */
-  --color-background: #ffffff; /* White for backgrounds */
-  --color-text-light: #f4f4f4; /* White for text on dark backgrounds */
-  --color-detail: #f0ad4e; /* Detail button color */
-  --color-edit: #5bc0de; /* Edit button color */
-  --color-delete: #d9534f; /* Delete button color */
+  --color-secondary: #5fb523;
+  --color-text: #434b54;
+  --color-background: #fff;
+  --color-text-light: #f4f4f4;
+  --color-detail: #f0ad4e;
+  --color-edit: #5bc0de;
+  --color-delete: #d9534f;
 }
+
 .signup-top-bar {
   width: 100%;
   display: flex;
@@ -21,21 +21,22 @@
   color: white;
   box-sizing: border-box;
 }
+
 body {
-  background-color: #E5E5E5; /* Fondo gris oscuro para la página */
+  background-color: #e5e5e5;
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: var(--color-text);
   margin: 0;
   padding: 0;
 }
 
-body, html {
-  height: 100%; /* Ensure that the body takes full height */
+body,
+html {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: var(--color-primary); /* Blue background for the entire page */
-  
+  background-color: var(--color-primary);
 }
 
 .icons-nav {
@@ -44,14 +45,12 @@ body, html {
   color: white;
   cursor: pointer;
 }
-/* Ensure content is vertically centered */
-
 
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Use viewport height to take full height of the screen */
+  height: 100vh;
   text-align: center;
   background-color: #3778c2;
 }
@@ -60,24 +59,22 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px; /* Ajusta según el diseño */
+  padding: 10px 20px;
 }
 
-/* Specific style for the title on the welcome page */
 .splash-title {
   font-size: 2em;
   font-weight: bold;
   color: var(--color-text-light);
-  margin-bottom: 20px; /* Space below the title */
+  margin-bottom: 20px;
 }
 
-/* Additional, if you have a button or link for signing in or signing up, you can use this: */
 .splash-button {
   background-color: var(--color-secondary);
   color: var(--color-background);
   border: none;
   padding: 15px 30px;
-  margin: 10px 5px; /* Space around the buttons */
+  margin: 10px 5px;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: bold;
@@ -86,16 +83,16 @@ body, html {
 }
 
 .splash-logo {
-  max-width: 350px; /* Adjust the size as necessary */
-  margin-bottom: 20px; /* Space below the logo */
+  max-width: 350px;
+  margin-bottom: 20px;
 }
 
-/* Base styles for the login page */
 .login-container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--color-background); /* Use your background color */
+  text-align: center;
+  background-color: var(--color-background);
 }
 
 .login-header {
@@ -105,47 +102,46 @@ body, html {
   margin-bottom: 20px;
 }
 
-/* Button styles */
-.button, input[type=submit] {
+.button,
+input[type=submit] {
   background-color: #5fb523;
   color: var(--color-text-light);
   border: none;
-  padding: 10px 0px;
+  padding: 10px 0;
   border-radius: 4px;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 10px;
-  display: block; /* Make buttons block level for full width */
+  display: block;
   width: 100%;
-  text-decoration: none; /* Elimina el subrayado */
+  text-decoration: none;
 }
 
 .delete-group-button {
   background-color: #d9534f;
- 
 }
 
 .button.detail-button {
   background-color: #f2f2f2;
   color: var(--color-text);
-  text-decoration: none; /* Elimina el subrayado */
+  text-decoration: none;
 }
 
 .button.edit-button {
   background-color: #f2f2f2;
   color: var(--color-text);
-  text-decoration: none; /* Elimina el subrayado */
+  text-decoration: none;
 }
-/* Form input fields */
+
 .form-input-fields {
   margin-bottom: 15px;
 }
+
 .back-icon {
-  /* Add your styles for the back icon here */
-  width: 24px; /* Example size */
-  height: 24px; /* Maintain aspect ratio */
-  background: url('path-to-back-icon.png') no-repeat center center; /* Use your back icon image */
+  width: 24px;
+  height: 24px;
+  background: url('path-to-back-icon.png') no-repeat center center;
   background-size: contain;
   cursor: pointer;
 }
@@ -154,8 +150,9 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #3778c2
+  background-color: #3778c2;
 }
+
 .header-top {
   width: 100%;
   display: flex;
@@ -165,7 +162,6 @@ body, html {
 }
 
 .back-icon2 {
-  
   width: 24px;
   height: 24px;
 }
@@ -177,101 +173,92 @@ body, html {
 }
 
 .nav-link {
-  margin: 0 10px; /* Espacio horizontal entre los enlaces */
-  color: white; /* Color del texto */
-  text-decoration: none; /* Elimina el subrayado */
-  font-weight: bold; /* Fuente en negrita */
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
+
 .nav-link:hover {
-  color: #ffcc00; /* Cambia el color al pasar el mouse */
+  color: #fc0;
 }
 
 .log-out-button {
-  flex-grow: 1; /* Asegura que el botón se mantenga a la derecha */
-  color: white; /* Color del texto */
-  background-color: #d9534f; /* Color de fondo rojo */
-  padding: 8px 12px; /* Espacio interno del botón */
-  border: none; /* Sin bordes */
-  border-radius: 4px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; 
+  flex-grow: 1;
+  color: white;
+  background-color: #d9534f;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
-/* app/assets/stylesheets/application.css */
-.log-out-button:hover {
-  background-color: #c9302c; /* Cambia el color de fondo al pasar el mouse */
-}
-/* ... existing styles ... */
 
-.login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center; /* Centers the title and form elements */
+.log-out-button:hover {
+  background-color: #c9302c;
 }
 
 .login-title {
   display: flex;
   justify-items: center;
-  color: #ffffff; /* The main color from the color palette */
-  margin-bottom: 20px; /* Spacing between title and form */
+  color: #fff;
+  margin-bottom: 20px;
   margin-right: 43%;
 }
 
 .login-form {
-  background-color: #ffffff; /* White background for the form */
-  border-radius: 4px; /* Rounded corners for the form */
+  background-color: #fff;
+  border-radius: 4px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow around the form */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .login-form .field {
-  margin-bottom: 15px; 
-  color: #000000;/* Spacing between form fields */
+  margin-bottom: 15px;
+  color: #000;
 }
 
 .login-form label {
-  display: block; /* Makes label take up its own line */
-  text-align: left; /* Aligns the label text to the left */
-  margin-bottom: 5px; /* Spacing between label and input */
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
-.login-form input[type=email], .login-form input[type=password] {
-  width: 100%; /* Makes input take up the full width of .field */
+.login-form input[type=email],
+.login-form input[type=password] {
+  width: 100%;
   padding: 8px;
-  border: 1px solid #ddd; /* A light grey border */
-  border-radius: 4px; /* Rounded corners on inputs */
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 .login-button {
-  --color-secondary: #5fb523; /* Secondary green */
-  background-color: #3778cc; /* The main color from the color palette */
-  color: rgb(17, 15, 15); /* White text on the buttons */
+  --color-secondary: #5fb523;
+
+  background-color: #3778cc;
+  color: rgb(17, 15, 15);
   border: none;
   padding: 10px 15px;
-  border-radius: 4px; /* Rounded corners on buttons */
-  margin-top: 10px; /* Spacing above the button */
-  width: 100%; /* Full width button */
-  cursor: pointer; /* Mouse cursor becomes pointer on hover */
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
 }
 
-/* Estilos para el Dashboard */
-/* Dashboard */
 .dashboard-container {
   padding: 20px;
 }
 
-
-
 .dashboard-header {
-  text-align: start; 
-  color: #090909; /* Color de texto gris oscuro */
+  text-align: start;
+  color: #090909;
 }
 
-/* Estilo para categorías y transacciones */
-.category-container, .transaction-container {
-  background-color: #FFF; /* Fondo blanco */
-  border-radius: 6px; /* Bordes redondeados */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+.category-container,
+.transaction-container {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
@@ -281,34 +268,36 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFF; /* Fondo blanco */
-  border-radius: 6px; /* Bordes redondeados */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
 }
 
-.category-title, .transaction-title {
-  font-size: 1.2em; /* Tamaño de fuente para los títulos */
-  color: #434b54; /* Color de texto gris oscuro */
+.category-title,
+.transaction-title {
+  font-size: 1.2em;
+  color: #434b54;
   margin: 0;
-  text-align: left; /* Alineación de texto a la izquierda */
+  text-align: left;
 }
 
 .transaction-date {
-  border-top: 1px solid #EAEAEA; /* Línea que separa el título de la fecha */
+  border-top: 1px solid #eaeaea;
   padding-top: 5px;
-  color: #A9A9A9; /* Color gris claro para la fecha */
+  color: #a9a9a9;
   font-size: 0.9em;
 }
 
 .transaction-amount {
-  font-weight: bold; /* Negrita para el monto de la transacción */
-  color: #000000; /* Color negro para el monto */
+  font-weight: bold;
+  color: #000;
   font-size: 1.1em;
-  text-align: right; /* Alineación de texto a la derecha */
+  text-align: right;
 }
+
 .icon-select {
   display: flex;
   justify-content: space-between;
@@ -327,46 +316,47 @@ body, html {
 .selected {
   border-color: var(--color-primary);
 }
-/* Alineación de los elementos en las transacciones */
+
 .transaction-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .back-icon2 .icon-back-arrow2 {
-  
   background: url('/app/assets/images/back-icon.svg') no-repeat center center;
-  
 }
-/* Enlaces */
+
 .link-all-transactions {
   display: block;
   width: 100%;
   text-align: center;
-  background-color: #5fb523; /* Color secundario para el botón */
+  background-color: #5fb523;
   color: white;
   padding: 10px 0;
   border-radius: 4px;
   text-transform: uppercase;
   font-weight: bold;
-  text-decoration: none; /* Quitar subrayado de enlace */
+  text-decoration: none;
   margin-top: 1rem;
 }
 
-.dashboard-container2{
+.dashboard-container2 {
   background-color: #e3e5e1;
   padding: 2px 10px 10px 10px;
 }
 
-.h2-dash{
-  color: #000000;
+.h2-dash {
+  color: #000;
 }
+
 .transactions-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.transactions-table th, .transactions-table td {
+.transactions-table th,
+.transactions-table td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
@@ -389,30 +379,24 @@ body, html {
   vertical-align: top;
 }
 
-
 @media (max-width: 768px) {
-  /* Barra de navegación más compacta */
   .header-bar {
-    
     padding: 5px;
   }
 
-  /* Icono de flecha más pequeño para ahorrar espacio */
   .back-icon img {
     width: 20px;
     height: 20px;
   }
 
-  /* Menos espacio entre enlaces y botón de cerrar sesión */
-  .nav-link, .log-out-button {
-    margin-bottom: 5px; /* Espacio debajo de cada elemento */
-    padding: 8px; /* Menos padding para ahorrar espacio */
-    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  .nav-link,
+  .log-out-button {
+    margin-bottom: 5px;
+    padding: 8px;
+    font-size: 0.9em;
   }
 
-  /* Alineación de los enlaces y el botón en una columna */
   .navigation-links {
-   
     align-items: center;
   }
 }

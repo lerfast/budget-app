@@ -1,10 +1,10 @@
 class FinancialTransactionsController < ApplicationController
   before_action :set_transaction, only: %i[edit update destroy]
-  
+
   def index
     @transactions = FinancialTransaction.where(user: current_user).order(created_at: :desc)
   end
-  
+
   def new
     @transaction = FinancialTransaction.new(group_id: params[:group_id])
     @transaction.group = Group.find(params[:group_id]) if params[:group_id].present?

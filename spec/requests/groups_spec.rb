@@ -11,14 +11,14 @@ RSpec.describe 'Groups', type: :request do
     let(:valid_params) { { group: { name: 'New Group', icon: 'icon.png' } } }
 
     it 'creates a new Group' do
-      expect {
+      expect do
         post groups_path, params: valid_params
-      }.to change(Group, :count).by(1)
+      end.to change(Group, :count).by(1)
     end
   end
 
   describe 'PUT /groups/:id' do
-    let(:group) { create(:group, user: user) }
+    let(:group) { create(:group, user:) }
     let(:updated_params) { { group: { name: 'Updated Group', icon: 'updated_icon.png' } } }
 
     it 'updates the requested group' do
@@ -30,12 +30,12 @@ RSpec.describe 'Groups', type: :request do
   end
 
   describe 'DELETE /groups/:id' do
-    let!(:group) { create(:group, user: user) }
+    let!(:group) { create(:group, user:) }
 
     it 'destroys the requested group' do
-      expect {
+      expect do
         delete group_path(group)
-      }.to change(Group, :count).by(-1)
+      end.to change(Group, :count).by(-1)
     end
   end
 end
