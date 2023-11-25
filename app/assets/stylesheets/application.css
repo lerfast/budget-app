@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Proxima+Nova:400,700');
 /* Template colors */
 :root {
-  --color-primary: #3778cc; /* Main blue */
+  /*--color-primary: #3778cc; /* Main blue */
   --color-secondary: #5fb523; /* Secondary green */
   --color-text: #434b54; /* Dark gray for text */
   --color-background: #ffffff; /* White for backgrounds */
@@ -11,7 +11,16 @@
   --color-edit: #5bc0de; /* Edit button color */
   --color-delete: #d9534f; /* Delete button color */
 }
-
+.signup-top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3778c2;
+  padding: 1%;
+  color: white;
+  box-sizing: border-box;
+}
 body {
   background-color: #E5E5E5; /* Fondo gris oscuro para la página */
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -26,8 +35,7 @@ body, html {
   padding: 0;
   font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: var(--color-primary); /* Blue background for the entire page */
-  color: var(--color-text-light);
-  text-align: center; /* Center text horizontally */
+  
 }
 
 .icons-nav {
@@ -37,32 +45,49 @@ body, html {
   cursor: pointer;
 }
 /* Ensure content is vertically centered */
+
+
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh; /* Use viewport height to take full height of the screen */
+  text-align: center;
+  background-color: #3778c2;
+}
+
+.add-new-category-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px; /* Ajusta según el diseño */
 }
 
 /* Specific style for the title on the welcome page */
 .splash-title {
-  font-size: 2em; /* Title size */
-  font-weight: bold; /* Bold font */
-  color: var(--color-text-light); /* White text */
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--color-text-light);
+  margin-bottom: 20px; /* Space below the title */
 }
 
 /* Additional, if you have a button or link for signing in or signing up, you can use this: */
 .splash-button {
-  background-color: var(--color-secondary); /* Green background for buttons */
-  color: var(--color-background); /* White text */
+  background-color: var(--color-secondary);
+  color: var(--color-background);
   border: none;
   padding: 15px 30px;
-  margin-top: 20px; /* Space above the button */
+  margin: 10px 5px; /* Space around the buttons */
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: bold;
-  text-decoration: none; /* Remove underline from links */
-  display: inline-block; /* Allows padding and margin to be applied */
+  text-decoration: none;
+  display: inline-block;
+}
+
+.splash-logo {
+  max-width: 200px; /* Adjust the size as necessary */
+  margin-bottom: 20px; /* Space below the logo */
 }
 
 /* Base styles for the login page */
@@ -82,10 +107,10 @@ body, html {
 
 /* Button styles */
 .button, input[type=submit] {
-  background-color: var(--color-primary);
+  background-color: #5fb523;
   color: var(--color-text-light);
   border: none;
-  padding: 10px 20px;
+  padding: 10px 0px;
   border-radius: 4px;
   font-weight: bold;
   text-transform: uppercase;
@@ -93,6 +118,24 @@ body, html {
   margin-top: 10px;
   display: block; /* Make buttons block level for full width */
   width: 100%;
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.delete-group-button {
+  background-color: #d9534f;
+ 
+}
+
+.button.detail-button {
+  background-color: #f2f2f2;
+  color: var(--color-text);
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.button.edit-button {
+  background-color: #f2f2f2;
+  color: var(--color-text);
+  text-decoration: none; /* Elimina el subrayado */
 }
 /* Form input fields */
 .form-input-fields {
@@ -107,8 +150,56 @@ body, html {
   cursor: pointer;
 }
 
-/* app/assets/stylesheets/application.css */
+.header-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3778c2
+}
+.header-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
+.back-icon2 {
+  
+  width: 24px;
+  height: 24px;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.nav-link {
+  margin: 0 10px; /* Espacio horizontal entre los enlaces */
+  color: white; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado */
+  font-weight: bold; /* Fuente en negrita */
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #ffcc00; /* Cambia el color al pasar el mouse */
+}
+
+.log-out-button {
+  flex-grow: 1; /* Asegura que el botón se mantenga a la derecha */
+  color: white; /* Color del texto */
+  background-color: #d9534f; /* Color de fondo rojo */
+  padding: 8px 12px; /* Espacio interno del botón */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; 
+}
+/* app/assets/stylesheets/application.css */
+.log-out-button:hover {
+  background-color: #c9302c; /* Cambia el color de fondo al pasar el mouse */
+}
 /* ... existing styles ... */
 
 .login-container {
@@ -119,8 +210,11 @@ body, html {
 }
 
 .login-title {
-  color: #3778cc; /* The main color from the color palette */
+  display: flex;
+  justify-items: center;
+  color: #ffffff; /* The main color from the color palette */
   margin-bottom: 20px; /* Spacing between title and form */
+  margin-right: 43%;
 }
 
 .login-form {
@@ -131,7 +225,8 @@ body, html {
 }
 
 .login-form .field {
-  margin-bottom: 15px; /* Spacing between form fields */
+  margin-bottom: 15px; 
+  color: #000000;/* Spacing between form fields */
 }
 
 .login-form label {
@@ -148,8 +243,9 @@ body, html {
 }
 
 .login-button {
+  --color-secondary: #5fb523; /* Secondary green */
   background-color: #3778cc; /* The main color from the color palette */
-  color: white; /* White text on the buttons */
+  color: rgb(17, 15, 15); /* White text on the buttons */
   border: none;
   padding: 10px 15px;
   border-radius: 4px; /* Rounded corners on buttons */
@@ -225,7 +321,11 @@ body, html {
   justify-content: space-between;
   align-items: center;
 }
-
+.back-icon2 .icon-back-arrow2 {
+  
+  background: url('/app/assets/images/back-icon.svg') no-repeat center center;
+  
+}
 /* Enlaces */
 .link-all-transactions {
   display: block;
@@ -249,8 +349,58 @@ body, html {
 .h2-dash{
   color: #000000;
 }
-/* Ensure that styles apply only on mobile devices if needed */
-@media (max-width: 768px) {
-  /* Mobile styles here */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
+.transactions-table th, .transactions-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.transactions-table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.transactions-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.transactions-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.transactions-table td {
+  vertical-align: top;
+}
+
+
+@media (max-width: 768px) {
+  /* Barra de navegación más compacta */
+  .header-bar {
+    
+    padding: 5px;
+  }
+
+  /* Icono de flecha más pequeño para ahorrar espacio */
+  .back-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Menos espacio entre enlaces y botón de cerrar sesión */
+  .nav-link, .log-out-button {
+    margin-bottom: 5px; /* Espacio debajo de cada elemento */
+    padding: 8px; /* Menos padding para ahorrar espacio */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  }
+
+  /* Alineación de los enlaces y el botón en una columna */
+  .navigation-links {
+   
+    align-items: center;
+  }
+}

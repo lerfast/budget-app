@@ -8,16 +8,18 @@
 
 <h2>Transactions</h2>
   <% @transactions.each do |transaction| %>
-    <div class='transaction-container'>
-    <span class="transaction-name"><%= transaction.created_at %></span>
-    <span class="transaction-name"><%= transaction.name %></span>
-    <span class="transaction-amount"><%= number_to_currency(transaction.amount) %></span>
-    <%= button_to "Delete", financial_transaction_path(transaction), method: :delete, class: "transaction-delete" %>
+    <div class="transaction-container">
+    <div class="transaction-item">
+    <p class="transaction-title"><%= transaction.name %></p>
+    <p class="transaction-date"><%= transaction.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    <p class="transaction-amount"><%= number_to_currency(transaction.amount) %></p>
+    
+    <%= button_to "Delete", financial_transaction_path(transaction), method: :delete, class: "button delete-button delete-group-button" %>
   </div>
 <% end %>
 
 <div class="buttons-bar">
-  <%= link_to 'Add new Transaction', new_financial_transaction_path(group_id: @group.id) %>
-  <%= link_to 'Back to Categories', groups_path %>
+  <%= link_to 'Add new Transaction', new_financial_transaction_path(group_id: @group.id), class: "link-all-transactions" %>
 </div>
 </div>

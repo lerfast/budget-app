@@ -1,6 +1,11 @@
-<div class="container">
-  <h2>Sign up</h2>
 
+<div class="signup-top-bar">
+  <%= link_to :back, class: "back-icon" do %>
+    <%= image_tag('back-icon.svg', alt: 'Back') %>
+  <% end %>
+  <h2 class="login-title">Sign up</h2>
+</div>
+<div class="container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 

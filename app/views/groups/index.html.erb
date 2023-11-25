@@ -17,13 +17,13 @@
         <div>
           <%= link_to 'Details', group_path(group), class: 'button detail-button' %>
           <%= link_to 'Edit', edit_group_path(group), class: 'button edit-button' %>
-          <%= button_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button delete-button', form: { "data-turbo" => "false" } %>
+          <%= button_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button delete-button delete-group-button', form: { "data-turbo" => "false" } %>
         </div>
       </div>
     <% end %>
   <% else %>
     <p>No groups available.</p>
   <% end %>
-  <%= link_to 'Add a new category', new_group_path, class: 'button add-new-category-button' %>
+  <%= link_to 'Add a new category', new_group_path, class: 'link-all-transactions' %>
   </div>
 </div>
