@@ -1,3 +1,4 @@
+<div class="dashboard-container">
 <% if @transaction.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
@@ -9,15 +10,13 @@
   </div>
 <% end %>
 
-<% if @transaction.group.present? %>
-  <div class='category'>
-    <%= image_tag(@transaction.group.icon, alt: @transaction.group.name, width: 80, height: 80, class: "group-icon") %>
-    <h2><%= @transaction.group.name %></h2>
-  </div>
-  <h2 class="title">Add a transaction</h2>
-<% else %>
-  <p>Group not selected or doesn't exist.</p>
-<% end %>
+<%# add the name of the group to the form received from the controller %>
+<div class='category-container'>
+  <%= image_tag(@transaction.group.icon, alt: @transaction.group.name, width: 80, height: 80, class: "group-icon") %>
+  <h2><%= @transaction.group.name %></h2>
+</div>
+<h2 class="title">Add a transaction</p>
+
 
 <%= form_with(model: @transaction, local: true, data: { turbo: false }, class: 'form-data') do |form| %>
   <div class='form-input-fields'>
@@ -33,11 +32,9 @@
     <%= form.hidden_field :group_id %>
 
   </div>
-  <%= form.submit "Save Transaction" %>
+  <%= form.submit "Save Transaction", class: "button" %>
 <% end %>
 
-<% if @transaction.group.present? %>
-  <%= link_to 'Go back', group_path(@transaction.group) %>
-<% else %>
-  <%= link_to 'Go back', groups_path %>
-<% end %>
+<%= link_to 'Go back', group_path(@transaction.group) %>
+
+</div>

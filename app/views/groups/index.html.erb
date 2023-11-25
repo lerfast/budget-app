@@ -1,12 +1,16 @@
 <!-- Fondo azul aplicado al body a través de CSS -->
 
-<div class="container">
-  <% if @groups.present? %>
-    <% @groups.each do |group| %>
-      <div class='category'>
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Categories</h1>
+  </div>
+  <div class="dashboard-container2">
+    <% if @groups.present? %>
+      <% @groups.each do |group| %>
+        <div class='category-container'>
         <%= link_to group_path(group) do %>
           <%= image_tag(group.icon, alt: group.name, class: "group-icon") %>
-          <div class="group-details">
+          <div class="category-title">
             <h3><%= group.name %></h3>
           </div>
         <% end %>
@@ -21,4 +25,5 @@
     <p>No groups available.</p>
   <% end %>
   <%= link_to 'Add a new category', new_group_path, class: 'button add-new-category-button' %>
+  </div>
 </div>

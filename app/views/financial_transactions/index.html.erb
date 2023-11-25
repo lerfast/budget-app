@@ -1,7 +1,7 @@
 <!-- app/views/financial_transactions/index.html.erb -->
-
+<div class="dashboard-container">
 <h1>Your Transactions</h1>
-
+<div class="transaction-container">
 <table>
   <thead>
     <tr>
@@ -22,5 +22,6 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'New Transaction', new_financial_transaction_path %>
+</div>
+<%= link_to 'New Transaction', new_financial_transaction_path, class: "button" %>
+</div>

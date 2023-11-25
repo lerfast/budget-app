@@ -1,3 +1,4 @@
+<div class="dashboard-container">
 <%= form_with(model: group, local: true) do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
@@ -10,9 +11,12 @@
     </div>
   <% end %>
 
+<div class='form-input-fields'>
   <%= form.label :name %>
   <%= form.text_field :name %>
+</div>
 
+ <div class='form-input-fields'>
   <%= form.label :icon %>
   <div class="icon-select">
   <% Group::ICONS.each do |icon| %>
@@ -22,6 +26,6 @@
   <% end %>
   <%= form.hidden_field :icon, id: 'selected_icon' %>
 </div>
-  
-  <%= form.submit %>
+  </div>
+  <%= form.submit "Save", class: "button" %>
 <% end %>

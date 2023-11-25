@@ -1,5 +1,5 @@
 /* Base styles for the welcome page */
-
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova:400,700');
 /* Template colors */
 :root {
   --color-primary: #3778cc; /* Main blue */
@@ -7,6 +7,17 @@
   --color-text: #434b54; /* Dark gray for text */
   --color-background: #ffffff; /* White for backgrounds */
   --color-text-light: #f4f4f4; /* White for text on dark backgrounds */
+  --color-detail: #f0ad4e; /* Detail button color */
+  --color-edit: #5bc0de; /* Edit button color */
+  --color-delete: #d9534f; /* Delete button color */
+}
+
+body {
+  background-color: #E5E5E5; /* Fondo gris oscuro para la página */
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
 }
 
 body, html {
@@ -19,6 +30,12 @@ body, html {
   text-align: center; /* Center text horizontally */
 }
 
+.icons-nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  cursor: pointer;
+}
 /* Ensure content is vertically centered */
 .flex-center {
   display: flex;
@@ -48,6 +65,190 @@ body, html {
   display: inline-block; /* Allows padding and margin to be applied */
 }
 
+/* Base styles for the login page */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--color-background); /* Use your background color */
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+.button, input[type=submit] {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block; /* Make buttons block level for full width */
+  width: 100%;
+}
+/* Form input fields */
+.form-input-fields {
+  margin-bottom: 15px;
+}
+.back-icon {
+  /* Add your styles for the back icon here */
+  width: 24px; /* Example size */
+  height: 24px; /* Maintain aspect ratio */
+  background: url('path-to-back-icon.png') no-repeat center center; /* Use your back icon image */
+  background-size: contain;
+  cursor: pointer;
+}
+
+/* app/assets/stylesheets/application.css */
+
+/* ... existing styles ... */
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center; /* Centers the title and form elements */
+}
+
+.login-title {
+  color: #3778cc; /* The main color from the color palette */
+  margin-bottom: 20px; /* Spacing between title and form */
+}
+
+.login-form {
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 4px; /* Rounded corners for the form */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow around the form */
+}
+
+.login-form .field {
+  margin-bottom: 15px; /* Spacing between form fields */
+}
+
+.login-form label {
+  display: block; /* Makes label take up its own line */
+  text-align: left; /* Aligns the label text to the left */
+  margin-bottom: 5px; /* Spacing between label and input */
+}
+
+.login-form input[type=email], .login-form input[type=password] {
+  width: 100%; /* Makes input take up the full width of .field */
+  padding: 8px;
+  border: 1px solid #ddd; /* A light grey border */
+  border-radius: 4px; /* Rounded corners on inputs */
+}
+
+.login-button {
+  background-color: #3778cc; /* The main color from the color palette */
+  color: white; /* White text on the buttons */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px; /* Rounded corners on buttons */
+  margin-top: 10px; /* Spacing above the button */
+  width: 100%; /* Full width button */
+  cursor: pointer; /* Mouse cursor becomes pointer on hover */
+}
+
+/* Estilos para el Dashboard */
+/* Dashboard */
+.dashboard-container {
+  padding: 20px;
+}
+
+
+
+.dashboard-header {
+  text-align: start; 
+  color: #090909; /* Color de texto gris oscuro */
+}
+
+/* Estilo para categorías y transacciones */
+.category-container, .transaction-container {
+  background-color: #FFF; /* Fondo blanco */
+  border-radius: 6px; /* Bordes redondeados */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.category-title, .transaction-title {
+  font-size: 1.2em; /* Tamaño de fuente para los títulos */
+  color: #434b54; /* Color de texto gris oscuro */
+  margin: 0;
+  text-align: left; /* Alineación de texto a la izquierda */
+}
+
+.transaction-date {
+  border-top: 1px solid #EAEAEA; /* Línea que separa el título de la fecha */
+  padding-top: 5px;
+  color: #A9A9A9; /* Color gris claro para la fecha */
+  font-size: 0.9em;
+}
+
+.transaction-amount {
+  font-weight: bold; /* Negrita para el monto de la transacción */
+  color: #000000; /* Color negro para el monto */
+  font-size: 1.1em;
+  text-align: right; /* Alineación de texto a la derecha */
+}
+.icon-select {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.icon-option {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.selected {
+  border-color: var(--color-primary);
+}
+/* Alineación de los elementos en las transacciones */
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Enlaces */
+.link-all-transactions {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #5fb523; /* Color secundario para el botón */
+  color: white;
+  padding: 10px 0;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none; /* Quitar subrayado de enlace */
+  margin-top: 1rem;
+}
+
+.dashboard-container2{
+  background-color: #e3e5e1;
+  padding: 2px 10px 10px 10px;
+}
+
+.h2-dash{
+  color: #000000;
+}
 /* Ensure that styles apply only on mobile devices if needed */
 @media (max-width: 768px) {
   /* Mobile styles here */

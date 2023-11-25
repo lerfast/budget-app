@@ -1,21 +1,28 @@
-<!-- app/views/dashboard/index.html.erb -->
-
-<h1>Dashboard</h1>
-
-<p>Welcome, <%= current_user.name %>.</p>
-
-<h2>Your categories</h2>
-<ul>
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Dashboard</h1>
+    <p>Welcome, <%= current_user.name %>.</p>
+  </div>
+<div class="dashboard-container2">
+  <h2 class="h2-dash" class>Your categories</h2>
   <% @groups.each do |group| %>
-    <li><%= group.name %></li>
+    <div class="category-container">
+    <%= image_tag(group.icon, alt: group.name, class: "group-icon") %>
+      <p class="category-title"><%= group.name %></p>
+    </div>
   <% end %>
-</ul>
 
-<h2>Your Recent Transactions</h2>
-<ul>
+  <h2 class="h2-dash">Your Recent Transactions</h2>
   <% @transactions.last(5).each do |transaction| %>
-    <li><%= transaction.name %> - <%= number_to_currency (transaction.amount) %></li>
+    <div class="transaction-container">
+      <div class="transaction-item">
+        <p class="transaction-title"><%= transaction.name %></p>
+        <p class="transaction-date"><%= transaction.created_at.strftime("%d %b %Y") %></p>
+      </div>
+      <p class="transaction-amount"><%= number_to_currency(transaction.amount) %></p>
+    </div>
   <% end %>
-</ul>
+  </div>
 
-<%= link_to 'See all transactions', financial_transactions_path %>
+  <%= link_to 'See all transactions', financial_transactions_path, class: "link-all-transactions" %>
+</div>
