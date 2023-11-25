@@ -6,7 +6,7 @@
 <div class="dashboard-container2">
   <h2 class="h2-dash" class>Your categories</h2>
   <% @groups.each do |group| %>
-    <div class="category-container">
+    <div class="transaction-container2">
     <%= image_tag(group.icon, alt: group.name, class: "group-icon") %>
       <p class="category-title"><%= group.name %></p>
     </div>

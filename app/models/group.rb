@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  ICONS = ['icon1.png', 'icon2.png', 'icon3.png', 'icon4.png', 'icon5.png', 'icon6.png', 'icon7.png'].freeze
+  ICONS = ['icon1.png', 'icon2.png', 'icon3.png', 'icon4.png', 'icon5.png', 'icon7.png'].freeze
   belongs_to :user
   has_many :financial_transactions, dependent: :destroy
 
