@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'financial_transactions/new', type: :view do
   before do
-    group = create(:group, icon: 'existing_icon.png') # Asegúrate de que este archivo exista
+    group = create(:group, icon: 'existing_icon.png')
     assign(:transaction, FinancialTransaction.new(group:))
   end
 

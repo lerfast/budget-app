@@ -1,16 +1,27 @@
-<% if @groups.present? %>
-  <% @groups.each do |group| %>
-    <%= link_to group_path(group) do %>
-      <div class='category'>
-        <%= image_tag(group.icon, alt: group.name, width: 80, height: 80, class: "group-icon") %>
-        <%= group.name %>
-        <%= link_to 'Details', group_path(group) %>
-    <%= link_to 'Edit', edit_group_path(group) %>
-    <%= button_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, form: { "data-turbo" => "false" } %>
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Categories</h1>
+  </div>
+  <div class="dashboard-container2">
+    <% if @groups.present? %>
+      <% @groups.each do |group| %>
+        <div class='category-container'>
+        <%= link_to group_path(group) do %>
+          <%= image_tag(group.icon, alt: group.name, class: "group-icon") %>
+          <div class="category-title">
+            <h3><%= group.name %></h3>
+          </div>
+        <% end %>
+        <div>
+          <%= link_to 'Details', group_path(group), class: 'button detail-button' %>
+          <%= link_to 'Edit', edit_group_path(group), class: 'button edit-button' %>
+          <%= button_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button delete-button delete-group-button', form: { "data-turbo" => "false" } %>
+        </div>
       </div>
     <% end %>
+  <% else %>
+    <p>No groups available.</p>
   <% end %>
-<% else %>
-  <p>No groups available.</p>
-<% end %>
-<%= link_to 'Add a new category', new_group_path %>
+  <%= link_to 'Add a new category', new_group_path, class: 'link-all-transactions' %>
+  </div>
+</div>

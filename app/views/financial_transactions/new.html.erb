@@ -9,13 +9,7 @@
   </div>
 <% end %>
 
-<%# add the name of the group to the form received from the controller %>
-<div class='category'>
-  <%= image_tag(@transaction.group.icon, alt: @transaction.group.name, width: 80, height: 80, class: "group-icon") %>
-  <h2><%= @transaction.group.name %></h2>
-</div>
-<h2 class="title">Add a transaction</p>
-
+<h2 class="title">Add a Transaction</h2>
 
 <%= form_with(model: @transaction, local: true, data: { turbo: false }, class: 'form-data') do |form| %>
   <div class='form-input-fields'>
@@ -34,4 +28,4 @@
   <%= form.submit "Save Transaction" %>
 <% end %>
 
-<%= link_to 'Go back', group_path(@transaction.group) %>
+<%= link_to 'Go back', financial_transactions_path %>

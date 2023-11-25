@@ -1,82 +1,402 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 
-.category {
-  background-color: #f7f7f7;
-  border: 1px solid #e6e6e6;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova:400,700');
+
+:root {
+  --color-secondary: #5fb523;
+  --color-text: #434b54;
+  --color-background: #fff;
+  --color-text-light: #f4f4f4;
+  --color-detail: #f0ad4e;
+  --color-edit: #5bc0de;
+  --color-delete: #d9534f;
 }
 
-.form-data {
+.signup-top-bar {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.form-input-fields {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.buttons-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-  background-color: #f7f7f7;
-  gap: 1rem;
-}
-
-.transaction-line {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
-  background-color: #f7f7f7;
-  gap: 4px;
-  padding: 5px;
+  background-color: #3778c2;
+  padding: 1%;
+  color: white;
+  box-sizing: border-box;
 }
 
-.custom-select {
-  position: relative;
+body {
+  background-color: #e5e5e5;
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--color-primary);
+}
+
+.icons-nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  cursor: pointer;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #3778c2;
+}
+
+.add-new-category-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.splash-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+.splash-button {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  border: none;
+  padding: 15px 30px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
   display: inline-block;
 }
 
-.select-item {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 5px;
+.splash-logo {
+  max-width: 350px;
+  margin-bottom: 20px;
 }
 
-.select-item:hover {
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--color-background);
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.button,
+input[type=submit] {
+  background-color: #5fb523;
+  color: var(--color-text-light);
+  border: none;
+  padding: 10px 0;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.delete-group-button {
+  background-color: #d9534f;
+}
+
+.button.detail-button {
+  background-color: #f2f2f2;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.button.edit-button {
+  background-color: #f2f2f2;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.form-input-fields {
+  margin-bottom: 15px;
+}
+
+.back-icon {
+  width: 24px;
+  height: 24px;
+  background: url('path-to-back-icon.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.header-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3778c2;
+}
+
+.header-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.back-icon2 {
+  width: 24px;
+  height: 24px;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.nav-link {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fc0;
+}
+
+.log-out-button {
+  flex-grow: 1;
+  color: white;
+  background-color: #d9534f;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.log-out-button:hover {
+  background-color: #c9302c;
+}
+
+.login-title {
+  display: flex;
+  justify-items: center;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-right: 43%;
+}
+
+.login-form {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .field {
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.login-form input[type=email],
+.login-form input[type=password] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-button {
+  --color-secondary: #5fb523;
+
+  background-color: #3778cc;
+  color: rgb(17, 15, 15);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dashboard-container {
+  padding: 20px;
+}
+
+.dashboard-header {
+  text-align: start;
+  color: #090909;
+}
+
+.category-container,
+.transaction-container {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.transaction-container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+}
+
+.category-title,
+.transaction-title {
+  font-size: 1.2em;
+  color: #434b54;
+  margin: 0;
+  text-align: left;
+}
+
+.transaction-date {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+  color: #a9a9a9;
+  font-size: 0.9em;
+}
+
+.transaction-amount {
+  font-weight: bold;
+  color: #000;
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.icon-select {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.icon-option {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.selected {
+  border-color: var(--color-primary);
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-icon2 .icon-back-arrow2 {
+  background: url('/app/assets/images/back-icon.svg') no-repeat center center;
+}
+
+.link-all-transactions {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #5fb523;
+  color: white;
+  padding: 10px 0;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.dashboard-container2 {
+  background-color: #e3e5e1;
+  padding: 2px 10px 10px 10px;
+}
+
+.h2-dash {
+  color: #000;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table th,
+.transactions-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.transactions-table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.transactions-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.transactions-table tr:hover {
   background-color: #f1f1f1;
 }
 
-.icon-optio.selected {
-  border: 2px solid blue;
+.transactions-table td {
+  vertical-align: top;
+}
+
+@media (max-width: 768px) {
+  .header-bar {
+    padding: 5px;
+  }
+
+  .back-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-link,
+  .log-out-button {
+    margin-bottom: 5px;
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .navigation-links {
+    align-items: center;
+  }
 }

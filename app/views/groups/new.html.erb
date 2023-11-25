@@ -1,3 +1,5 @@
+<div class="container">
+  <h2>Create a New Group</h2>
 <%= form_with model: @group, local: true, data: { turbo: false } do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
@@ -14,3 +16,4 @@
 
   <%= form.submit "Save" %>
 <% end %>
+</div>
