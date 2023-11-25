@@ -13,7 +13,6 @@ RSpec.feature 'EditGroup', type: :feature do
     visit edit_group_path(group)
     fill_in 'Name', with: 'Updated Group Name'
 
-
     click_button 'Save'
   end
 end
