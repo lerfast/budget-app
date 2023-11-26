@@ -32,7 +32,7 @@
 
 # 📖 Budget Buddy <a name="about-project"></a>
 
-**Budget Buddy** is a Ruby on Rails mobile web application where users can manage their budget: they have a list of transactions associated with a category, so that users can see how much money they spent and on what.
+**Budget Buddy** is a Ruby on Rails mobile web application where users can manage their budget: they have a list of transactions associated with a category, so that users can see how much money they spent and on what..
 
 ## 🛠 Built With <a name="built-with"></a>
 
