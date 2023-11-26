@@ -3,7 +3,7 @@
 <div align="center">
 
   <h2><b>BudgetBuddy</b></h2>
-  <h4>Luis Emilio Rojas</h4>
+  <h4>Luis Emilio Rojas Rojas</h4>
 
 </div>
 
