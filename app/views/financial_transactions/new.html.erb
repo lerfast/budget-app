@@ -1,0 +1,31 @@
+<% if @transaction.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+    <ul>
+      <% @transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h2 class="title">Add a Transaction</h2>
+
+<%= form_with(model: @transaction, local: true, data: { turbo: false }, class: 'form-data') do |form| %>
+  <div class='form-input-fields'>
+    <div class='input-fields'>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class='input-fields'>
+      <%= form.label :amount %>
+      <%= form.number_field :amount %>
+    </div>
+
+    <%= form.hidden_field :group_id %>
+
+  </div>
+  <%= form.submit "Save Transaction" %>
+<% end %>
+
+<%= link_to 'Go back', financial_transactions_path %>

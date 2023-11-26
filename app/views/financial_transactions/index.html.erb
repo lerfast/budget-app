@@ -1,0 +1,23 @@
+<div class="dashboard-container">
+  <h1>Your Transactions</h1>
+  <div class="transaction-container">
+    <table class="transactions-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.name %></td>
+            <td><%= number_to_currency(transaction.amount) %></td>
+            <td><%= transaction.created_at.strftime("%d/%m/%Y") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
