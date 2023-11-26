@@ -1,106 +1,47 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1><b>Budget App</b></h1><a name="about-project"></a>
+
+  <h2><b>BudgetBuddy</b></h2>
+  <h4>Luis Emilio Rojas</h4>
+
 </div>
-
-
-
-
-
-
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
 
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
-- [📗 Table of Contents](#-table-of-contents)
-- [📖 Budget App ](#-budget-app-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Run tests](#run-tests)
-  - [👥 Author ](#-author-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [❓ FAQ ](#-faq-)
-  - [📝 License ](#-license-)
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+    - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Budget App <a name="about-project"></a>
+# 📖 Budget Buddy <a name="about-project"></a>
 
-> A Mobile Budget app were users can manage his budget. They can create categories and they have a list of transactions associated with that category, so that they can see how much money they spent and on what. Users can also register with username and password. Built with RoR. [You can see the video description of the project here.](https:)
+**Budget Buddy** is a Ruby on Rails mobile web application where users can manage their budget: they have a list of transactions associated with a category, so that users can see how much money they spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> List of technologies used for this project
-
-<!-- <details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details> -->
-
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://rubyonrails.org">Ruby on Rails</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -108,19 +49,20 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **Create user LogIn and SignUp pages.**
-- **Create Categories page.**
-- **Create transaction page for each category.**
-- **Add categories and transactions pages.**
-- **Remove categories**
-
+- **Creating data models.**
+- **Creating controllers.**
+- **Validations and Models.**
+- **Add Devise ofr authentication.**
+- **Add unit rspec and integration Capybara tests.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo Link.](https://.onrender.com)
+ The link to the project deployed and the presentation video:
+
+- [Live Demo Link](https://mybudgetappbyme.onrender.com)
+- [Project presentation video](https://www.loom.com/share/3223814f988341dcabf9407e5000beb0)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,76 +74,46 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-
-```sh
-gem install ruby
-```
-- Browser (Google Chrome, Mozilla Firefox, Safari or any other browser)
+In order to run this project you need an Ubuntu console (WSL)
 
 ### Setup
 
 Clone this repository to your desired folder:
-
 
 ```sh
   cd my-folder
   git clone https://github.com/lerfast/Module5-Capstone-budget-app.git
 ```
 
-### Install
-
-Install this project with:
-
-
-```sh
-  cd Module5-Capstone-Budget-app-rails
-  bundle install
-```
-
 ### Usage
 
-To run the project, execute the following command:
+Follow the steps:
 
+1. Open your terminal
+2. Navigate to your folder
+3. Start the server (rails s)
+```sh
+   rails s
 ```
-rails tailwindcss:watch
-control + c 
-rails s
-```
-**Note:** If there are any errors consider adding your necesary username and password in `database.yml` for setting up your local enviroment and use the following comand:
-
-```
-rails db:create db:migrate
-rails s
+4. Open your browser at your local host
+```sh
+   http://localhost:3000
 ```
 
 ### Run tests
 
 To run tests, run the following command:
 
-```
-control + c
-rspec: bundle exec rspec
-```
-
-<!-- ### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
 ```sh
-
+  cd project
+  rspec spec
 ```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Luis Emilio Rojas Rojas**
 
@@ -209,16 +121,16 @@ Example:
 - [Twitter](https://twitter.com/lerfast)
 - [LinkedIn](https://www.linkedin.com/in/luis-emilio-rojas-rojas-6ba90a8a/)
 
-  
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Improve UI**
-- [ ] **Add more functionality**
-- [ ] **Add Desktop Version**
+- [ ] **Add API end points.**
+- [ ] **Add API documentation.**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -228,7 +140,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/lerfast/Module5-Capstone-budget-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -236,8 +148,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project,please give it a ⭐️!
-
+If you like this project please leave a star!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -245,27 +156,14 @@ If you like this project,please give it a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for giving me the opportunity to learn and grow as a developer and also I like to thank my family, they are all my support. 🌟
+I would like to thank Microverse.
 
-> Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+<h3><b>Attribution</b></h3>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ <a name="faq"></a>
-
-- **Do I need to install any program before running this project?**
-
-  - [ ] **Yes, you need to install Ruby** 
-  
-  <br>
-
-- **Can I use this project for my own purposes?**
-
-  - [ ] **Yes, you can.**
-
-
+- Title: Creative Commons
+- Author: Gregoire Vella
+- Source: https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=
+- License: https://creativecommons.org/licenses/by-nc/4.0/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -274,6 +172,5 @@ I would like to thank Microverse for giving me the opportunity to learn and grow
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
