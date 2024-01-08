@@ -7,11 +7,11 @@ default: &default
 
 development:
   <<: *default
-  database: budget_app_development
+  database: budget_app2_development
 
 test:
   <<: *default
-  database: budget_app_test
+  database: budget_app2_test
 
 production:
   <<: *default
