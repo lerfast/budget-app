@@ -1,23 +1,16 @@
 <div class="dashboard-container">
-  <h1>Your Transactions</h1>
-  <div class="transaction-container">
-    <table class="transactions-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Amount</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @transactions.each do |transaction| %>
-          <tr>
-            <td><%= transaction.name %></td>
-            <td><%= number_to_currency(transaction.amount) %></td>
-            <td><%= transaction.created_at.strftime("%d/%m/%Y") %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+  <% @transactions.each do |transaction| %>
+    <div class="transaction-card">
+      <% if transaction.group && transaction.group.icon.present? %>
+        <div class="transaction-icon">
+          <%= image_tag(transaction.group.icon, alt: transaction.group.name) %>
+        </div>
+      <% end %>
+      <div class="transaction-info">
+        <div class="transaction-name"><%= transaction.name %></div>
+        <div class="transaction-amount"><%= number_to_currency(transaction.amount) %></div>
+        <div class="transaction-date"><%= transaction.created_at.strftime("%d %b %Y") %></div>
+      </div>
+    </div>
+  <% end %>
 </div>

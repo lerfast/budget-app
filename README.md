@@ -3,7 +3,7 @@
 <div align="center">
 
   <h2><b>BudgetBuddy</b></h2>
-  <h4>Luis Emilio Rojas</h4>
+  <h4>Luis Emilio Rojas Rojas</h4>
 
 </div>
 
@@ -32,7 +32,7 @@
 
 # 📖 Budget Buddy <a name="about-project"></a>
 
-**Budget Buddy** is a Ruby on Rails mobile web application where users can manage their budget: they have a list of transactions associated with a category, so that users can see how much money they spent and on what.
+**Budget Buddy** is a Ruby on Rails mobile web application where users can manage their budget: they have a list of transactions associated with a category, so that users can see how much money they spent and on what..
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -62,7 +62,7 @@
  The link to the project deployed and the presentation video:
 
 - [Live Demo Link](https://mybudgetappbyme.onrender.com)
-- [Project presentation video](https://www.loom.com/share/3223814f988341dcabf9407e5000beb0)
+- [Project presentation video](https://www.loom.com/share/778c4a1057164e4580d9647e4ebae6f7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

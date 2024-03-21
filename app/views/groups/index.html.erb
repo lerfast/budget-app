@@ -1,17 +1,19 @@
 <div class="dashboard-container">
   <div class="dashboard-header">
-    <h1>Categories</h1>
   </div>
   <div class="dashboard-container2">
     <% if @groups.present? %>
       <% @groups.each do |group| %>
         <div class='category-container'>
-        <%= link_to group_path(group) do %>
-          <%= image_tag(group.icon, alt: group.name, class: "group-icon") %>
-          <div class="category-title">
-            <h3><%= group.name %></h3>
-          </div>
-        <% end %>
+        <div class='category-container5'>
+          <%= link_to group_path(group), class: 'category-link2' do %>
+          <%= image_tag(group.icon, alt: group.name, class: "group-icon2") %>
+          <div class="category-info2">
+       <h3 class="category-name2"><%= group.name %></h3>
+    </div>
+  <% end %>
+</div>
+
         <div>
           <%= link_to 'Details', group_path(group), class: 'button detail-button' %>
           <%= link_to 'Edit', edit_group_path(group), class: 'button edit-button' %>
